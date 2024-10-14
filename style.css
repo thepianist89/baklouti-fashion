@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: futura;
+  src: url(futura.woff2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppiins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --prim-color: #c33022;
+  --black-color: #000;
+  --white-color: #fff;
+  --futura-font: futura;
+  --transition: 0.3s;
+  --transition2: 0.6s;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  transition: var(--transition);
+}
+/* Reusable section */
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 12%;
+}
+
+/* Styling Nav bar ********************************************/
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 0 12%;
+  z-index: 999;
+  transition: var(--transition);
+}
+nav:hover {
+  background-color: var(--white-color);
+}
+.logo {
+  width: 130px;
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.menu li a {
+  font-size: 1.2rem;
+  color: var(--black-color);
+  position: relative;
+  transition: var(--transition);
+}
+.menu li a:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  background-color: var(--prim-color);
+  transition: var(--transition);
+}
+.menu li:hover a:after {
+  width: 100%;
+}
+.menu li:hover a {
+  color: var(--prim-color);
+}
+.shop_icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop_icons i {
+  font-style: 1.3rem;
+  transform: var(--transition);
+}
+.shop_icons i:hover {
+  color: var(--prim-color);
+  cursor: pointer;
+}
+
+/* End Styling Nav bar ********************************************/
+/* Start Styling the HERO HEADER **********************************/
+.heroSwiper {
+  width: 100%;
+  position: relative;
+}
+
+.hero_header {
+  width: 100%;
+  height: 90vh;
+  background-image: url(Images/banner-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  animation: anim_top var(--transition2) ease;
+}
+.hero_content h2 {
+  color: var(--prim-color);
+  font-size: 1.2rem;
+  line-height: 5rem;
+  font-weight: 400;
+}
+
+.hero_content h1 {
+  width: 50%;
+  font-size: 4rem;
+  line-height: 5rem;
+  font-weight: 400;
+}
+.hero_content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px 0;
+  line-height: 2rem;
+}
+
+/* Styling the Hero button/* ************************************************/
+
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  margin: 20px 0;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--prim-color);
+  z-index: -1;
+  transition: var(--transition2);
+  transform: rotate(90deg);
+}
+button:hover:after {
+  height: 100%;
+  top: 0;
+  transform: rotate(0deg);
+}
+button:active {
+  transform: scale(1.1);
+}
+
+.hero_header2 {
+  background-image: url(Images/banner-2.png);
+}
+
+.hero_content2 {
+  left: -10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes anim_top {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* End Styling the HERO HEADER **********************************/
+/* START styling Gategories SEC *************************************/
+.categories {
+  flex-direction: column;
+  gap: 50px;
+}
+.headings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headings h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--prim-color);
+}
+
+.headings h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+/* Start Styling Swiper Categories  **************/
+
+.categorySwiper {
+  width: 100%;
+}
+.category_slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.category_img {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.category_slide:hover .category_img img {
+  transform: scale(1.1);
+}
+.category_slide h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: 400;
+}
+/* Start Styling Swiper Categories  **************/
+/* END styling Gategories SEC ***************************************/
+/* Start styling FASHION SEC ***************************************/
+.fashion {
+  gap: 50px;
+}
+.fashion_row {
+  width: 50%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-image: url(Images/offer-banner1.jpg);
+  background-size: cover;
+  padding: 5% 3%;
+  border-radius: 10px;
+}
+
+.fashion_row:nth-child(2) {
+  background-image: url(Images/offer-banner2.jpg);
+  align-items: flex-end;
+  text-align: right;
+}
+.fashion_row:nth-child(2) h1 {
+  width: 60%;
+}
+.fashion h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.fashion h1 {
+  width: 70%;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  cursor: pointer;
+}
+.fashion p {
+  color: var(--white-color);
+  font-weight: 500;
+}
+/* END styling FASHION SEC ***************************************/
