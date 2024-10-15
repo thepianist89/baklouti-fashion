@@ -11,7 +11,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Poppiins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -229,12 +229,12 @@ button:active {
 
 .headings h2 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--prim-color);
 }
 
 .headings h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 500;
 }
 
@@ -276,13 +276,36 @@ button:active {
   height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 10px;
   background-image: url(Images/offer-banner1.jpg);
-  background-size: cover;
+  background-size: 100%;
   padding: 5% 3%;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.fashion_row:hover {
+  background-size: 102%;
+  background-position: left;
+}
+
+.fashion_row:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 20%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: -1;
 }
 
 .fashion_row:nth-child(2) {
@@ -292,6 +315,10 @@ button:active {
 }
 .fashion_row:nth-child(2) h1 {
   width: 60%;
+}
+
+.fashion_row:nth-child(2):after {
+  transform: rotate(180deg);
 }
 .fashion h2 {
   font-size: 1rem;
@@ -309,4 +336,222 @@ button:active {
   color: var(--white-color);
   font-weight: 500;
 }
+.fashion a {
+  color: var(--white-color);
+  letter-spacing: 1px;
+  position: relative;
+  transition: var(--transition);
+}
+.fashion a:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  transition: var(--transition);
+}
+.fashion a:hover:after {
+  background-color: var(--black-color);
+}
+
+.fashion a:hover {
+  color: var(--black-color);
+}
 /* END styling FASHION SEC ***************************************/
+
+/* Start styling Products SEC ***************************************/
+.products {
+  flex-direction: column;
+  gap: 50px;
+}
+.products_categories {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.products_categories button {
+  background-color: transparent;
+  color: #999;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+.products_categories button:hover {
+  color: var(--white-color);
+}
+.products_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  place-content: center;
+  place-items: center;
+}
+.product_card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.product_card:hover .shop_btn {
+  opacity: 1;
+}
+.like_icon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-size: 1.3rem;
+  transition: var(--transition);
+  z-index: 5;
+}
+.like_icon:hover {
+  color: var(--prim-color);
+  cursor: pointer;
+}
+.shop_btn {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  opacity: 0;
+  transition: var(--transition2);
+}
+.shop_btn:hover {
+  color: var(--white-color);
+}
+.product_img {
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.product_card:hover .sec_product {
+  opacity: 1;
+}
+
+.sec_product {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99.8%;
+  opacity: 0;
+  transition: var(--transition2);
+}
+.product_card p {
+  color: #999;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: var(--transition);
+}
+.product_card p:hover {
+  color: var(--black-color);
+}
+.product_card h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.product_card h2:hover {
+  color: var(--prim-color);
+  cursor: pointer;
+}
+/* END styling Products SEC *****************************************/
+/* Start Styling the BANNER SEC **************************/
+.banner {
+  background-image: url(Images/baner-bg.jpg);
+  padding: 7% 12%;
+  background-size: cover;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.banner_content {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 3% 5%;
+  position: relative;
+  z-index: 1;
+}
+.banner_content:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-color);
+  opacity: 0.5;
+  z-index: -1;
+}
+.banner_content h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--prim-color);
+}
+.banner_content h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.banner_content p {
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #3a3a3a;
+}
+.banner_content button {
+  background-color: transparent;
+  border: 1px solid var(--black-color);
+  color: var(--black-color);
+  margin: 10px 0;
+}
+.banner_content button:hover {
+  color: var(--white-color);
+  border-color: var(--prim-color);
+}
+/* End Styling the BANNER SEC **************************/
+/* Start Styling OUR BEST SELLING *****************************/
+.sellings {
+  flex-direction: column;
+  gap: 50px;
+}
+
+.best_products {
+  grid-template-columns: repeat(3, 1fr);
+}
+.best_products .shop_btn {
+  width: 80%;
+  top: 80%;
+  left: 10%;
+}
+.best_products .sec_product {
+  width: 100%;
+  height: 99.7%;
+}
+/* End Styling OUR BEST SELLING *****************************/
+/* Start Styling The SPRING COLLECTION SEC ******************/
+.spring_collections {
+  flex-direction: column;
+  gap: 50px;
+}
+.collectionSwiper {
+  width: 100%;
+}
+/* End Styling The SPRING COLLECTION SEC ******************/

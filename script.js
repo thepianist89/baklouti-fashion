@@ -21,3 +21,17 @@ var swiper = new Swiper('.categorySwiper', {
 });
 
 // END Categories SLIDER the JS PART  **************************
+
+// Start JS Swiper the Spring Sring Collection
+var swiper = new Swiper('.collectionSwiper', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: true,
+});
+
+// End JS Swiper the Spring Sring Collection
+
+// Mexing the products' sec items using MIXITUP FILTERS*********
+var mixer = mixitup('.products_cards');
+// End Mexing the products**************************************
